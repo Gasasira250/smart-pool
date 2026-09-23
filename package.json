@@ -1,0 +1,10 @@
+{
+  "name": "smart-pool",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "npm start --prefix backend",
+    "test": "npm test --prefix backend",
+    "init-db": "npm run init-db --prefix backend"
+  }
+}

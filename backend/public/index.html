@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Pool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="mark">Smart Pool</p>
+        <h1>Table desk</h1>
+      </div>
+      <p class="live" id="connection">Checking the API…</p>
+    </header>
+
+    <main>
+      <section class="table-panel" aria-live="polite">
+        <div class="table-copy">
+          <p class="eyebrow">Floor</p>
+          <h2 id="table-name">Table</h2>
+          <p id="game-line">Loading the table…</p>
+          <div class="actions">
+            <span class="pill" id="table-status" data-status="available">Available</span>
+            <button type="button" id="end-game" hidden>End game</button>
+          </div>
+        </div>
+        <div class="rail" aria-hidden="true">
+          <div class="felt">
+            <span class="pocket corner tl"></span>
+            <span class="pocket side top"></span>
+            <span class="pocket corner tr"></span>
+            <span class="pocket corner bl"></span>
+            <span class="pocket side bottom"></span>
+            <span class="pocket corner br"></span>
+            <p class="felt-label" id="felt-label">6 pockets</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="desk">
+        <form id="pay-form">
+          <p class="eyebrow">Simulated payment</p>
+          <h2>Take money for a game</h2>
+          <p class="hint" id="pay-hint">
+            No money is sent until live API keys are added. In simulation, a phone number ending in 0 is declined.
+          </p>
+          <label>
+            Phone
+            <input id="phone" name="phone" inputmode="numeric" value="0772123456" autocomplete="off" />
+          </label>
+          <label>
+            Amount (UGX)
+            <input id="amount" name="amount" inputmode="numeric" value="5000" />
+          </label>
+          <div class="pay-buttons">
+            <button type="submit" class="mtn" data-provider="mtn">Pay with MTN</button>
+            <button type="submit" class="airtel" data-provider="airtel">Pay with Airtel</button>
+          </div>
+          <p class="notice" id="notice" hidden></p>
+        </form>
+
+        <section>
+          <div class="section-head">
+            <h2>Payments</h2>
+          </div>
+          <ul class="payments" id="payments"></ul>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
